@@ -7,7 +7,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="p-12 bg-gray-100 w-full h-full min-h-screen flex flex-col">
+  <div class="p-12 bg-[#1b1b1b] w-full h-full min-h-screen flex flex-col">
 
     <div class="mb-4 flex justify-center items-center w-full"> <!-- should have justify between instead if center -->
       <h1 class="text-3xl">
