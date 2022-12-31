@@ -1,8 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+const firstLesson = useFirstLesson()
+</script>
 
 <template>
-  <div>
-    Page: Hello, Mastering Nuxt 3 !
+  <div class="text-center">
+    <NuxtLink :to="firstLesson.path" class="underline text-2xl font-semibold">Go to first lesson</NuxtLink>
   </div>
 </template>
 

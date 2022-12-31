@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-
 import type {Ref} from "vue";
 
 definePageMeta({
   layout: "auth"
 })
+
+const { title } = useCourse()
 
 const username = ref("")
 const usernameError: Ref<string | null> = ref(null)
@@ -12,7 +13,6 @@ const password = ref("")
 const passwordError: Ref<string | null> = ref(null)
 
 const show = ref(false)
-
 const toggleShowPassword = () => {
   show.value = !show.value
 }

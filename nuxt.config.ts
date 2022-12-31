@@ -4,8 +4,8 @@ export default defineNuxtConfig({
         'nuxt-windicss',
         'nuxt-icon',
         '@vueuse/nuxt',
+        '@nuxtjs/supabase'
     ],
-    nuxtIcon: {
-        size: '32px',
+    supabase: {
     }
 })
