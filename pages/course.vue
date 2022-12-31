@@ -3,11 +3,14 @@
 const { chapters } = useCourse()
 const route = useRoute()
 
-
+const resetError = async (error: { value: null; }) => {
+  await navigateTo('/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3')
+  error.value = null
+}
 </script>
 
 <template>
-  <div class="p-12 bg-[#1b1b1b] w-full h-full min-h-screen flex flex-col">
+
 
     <div class="mb-4 flex justify-center items-center w-full"> <!-- should have justify between instead if center -->
       <h1 class="text-3xl">
@@ -50,8 +53,7 @@ const route = useRoute()
       </div>
 
       <div class="prose p-12 bg-white rounded-md w-[100ch]">
-        <NuxtPage />
-<!--        <NuxtErrorBoundary>
+        <NuxtErrorBoundary>
           <NuxtPage />
           <template #error="{ error }">
             <p>
@@ -67,10 +69,10 @@ const route = useRoute()
               </button>
             </p>
           </template>
-        </NuxtErrorBoundary>-->
+        </NuxtErrorBoundary>
       </div>
     </div>
-  </div>
+
 </template>
 
 <style scoped></style>
