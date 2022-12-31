@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-const { chapters } = useCourse()
+const { chapters, title } = useCourse()
 const route = useRoute()
 
 const resetError = async (error: { value: null; }) => {
@@ -11,12 +11,13 @@ const resetError = async (error: { value: null; }) => {
 
 <template>
 
+  <div>
 
     <div class="mb-4 flex justify-center items-center w-full"> <!-- should have justify between instead if center -->
       <h1 class="text-3xl">
         <span class="font-medium">
           Course:
-          <span class="font-bold">Mastering Nuxt</span>
+          <span class="font-bold">{{ title }}</span>
         </span>
       </h1>
     </div>
@@ -72,6 +73,8 @@ const resetError = async (error: { value: null; }) => {
         </NuxtErrorBoundary>
       </div>
     </div>
+
+  </div>
 
 </template>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const error = useError()
+const firstLesson = useFirstLesson()
 
 const handleError = (errorCode: string) => {
   if(errorCode) {
@@ -7,7 +8,7 @@ const handleError = (errorCode: string) => {
     let redirectUrl;
     switch (parseInt(errorCode)) {
       case 404:
-        redirectUrl = "/course"
+        redirectUrl = `${firstLesson.path}`
         break;
       case 401:
         redirectUrl = "/login"
