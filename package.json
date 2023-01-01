@@ -8,9 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/supabase": "^0.3.0",
     "@vueuse/core": "^9.9.0",
     "@vueuse/nuxt": "^9.9.0",
     "nuxt": "3.0.0",
     "nuxt-windicss": "^2.6.0"
+  },
+  "dependencies": {
+    "nuxt-icon": "^0.1.8"
   }
 }

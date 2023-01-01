@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0408a770-4488-49e0-99d5-234cfde4159a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/UserCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/api/course/chapter/[chapterSlug]/lesson/[lessonSlug].get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/api/course/meta.get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/course.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composables/courseData.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/courseData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composables/useCourse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/composables/useCourse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composables/useFirstLesson.ts" beforeDir="false" afterPath="$PROJECT_DIR$/composables/useFirstLesson.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/auth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/auth.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/course.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/course.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/course/chapter/[chapterSlug]/lesson/[lessonSlug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/course/chapter/[chapterSlug]/lesson/[lessonSlug].vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/middleware/auth.ts" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Jebr9xlJCLY9eRgnKlo7k4fe01" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "X:/Web Development/Projects/course-platform/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\tiago\\AppData\\Local\\JetBrains\\Toolbox\\apps\\WebStorm\\ch-0\\223.8214.51\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\Web Development\Projects\course-platform\server" />
+      <recent name="X:\Web Development\Projects\course-platform" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0408a770-4488-49e0-99d5-234cfde4159a" name="Changes" comment="" />
+      <created>1672441692042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672441692042</updated>
+      <workItem from="1672441693147" duration="20638000" />
+      <workItem from="1672464294322" duration="16101000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

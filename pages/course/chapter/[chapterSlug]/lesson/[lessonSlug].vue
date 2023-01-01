@@ -1,26 +1,57 @@
 <script setup lang="ts">
-const course = useCourse()
+
+const course = await useCourse()
 const route = useRoute()
+const { chapterSlug, lessonSlug } = route.params
+const lesson = await useLesson(chapterSlug, lessonSlug)
+
+definePageMeta({
+  middleware: [
+    async ({ params }, from) => {
+      const course = await useCourse()
+
+      const chapter = computed(() => {
+        return course.value.chapters.find(chapter => chapter.slug === params.chapterSlug)
+      })
+
+      if(!chapter.value) {
+        return abortNavigation(createError({
+          statusCode: 404,
+          message: "Chapter not found !"
+        }))
+      }
+
+      const lesson = computed(() => {
+        return chapter.value?.lessons.find(lesson => lesson.slug === params.lessonSlug)
+      })
+
+      if(!lesson.value) {
+        return abortNavigation(createError({
+          statusCode: 404,
+          message: "Lesson not found !"
+        }))
+      }
+
+    },
+    "auth"
+  ],
+})
 
 const chapter = computed(() => {
-  return course.chapters.find(chapter => chapter.slug === route.params.chapterSlug)
+  return course.value.chapters.find(chapter => chapter.slug === route.params.chapterSlug)
 })
 
-
-const lesson = computed(() => {
-  return chapter.value?.lessons.find(lesson => lesson.slug === route.params.lessonSlug)
-})
-
-const title = computed(() => `${lesson.value?.title} - ${course.title}`)
+const title = computed(() => `${lesson.value?.title} - ${course.value.title}`)
 
 useHead({
   title: title
 })
 
-const progress = useLocalStorage('progress', []);
+const progress = useLocalStorage<[boolean[]] | []>('progress', []);
 
 
 const isLessonCompleted = computed(() => {
+  if(!chapter.value || !lesson.value) return
   if(!progress.value[chapter.value.number - 1]) {
     return false
   }
@@ -33,12 +64,18 @@ const isLessonCompleted = computed(() => {
 })
 
 const toggleComplete = () => {
+  if(!chapter.value || !lesson.value) return
   if(!progress.value[chapter.value.number - 1]) {
     progress.value[chapter.value.number - 1] = []
   }
 
   progress.value[chapter.value.number - 1][lesson.value.number - 1] = !isLessonCompleted.value
 }
+
+if(route.params.lessonSlug === '3-typing-component-events') {
+  console.log(route.params.paramthatdoesnotexistwhoops.capitalizeIsNotAMethod())
+}
+
 </script>
 
 <template>
