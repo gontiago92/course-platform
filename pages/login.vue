@@ -1,12 +1,41 @@
 <script lang="ts" setup>
 import type {Ref} from "vue";
+import {useSupabaseUser} from "#imports";
 
 definePageMeta({
   layout: "auth"
 })
 
-const { title } = useCourse()
+const course = await useCourse()
+const { query } = useRoute()
+/**
+ * Supabase Github login fully working
+ */
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
 
+watchEffect(async () => {
+  if(user.value) {
+    await navigateTo(query.redirectTo as string, {
+      replace: true
+    })
+  }
+})
+
+const login = async () => {
+  const redirectTo = `${window.location.origin}${query.redirectTo}`
+
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+    options: { redirectTo },
+  })
+
+  if(error) console.log(error)
+}
+
+/**
+ * Simple email login (Not yet implemented)
+ */
 const username = ref("")
 const usernameError: Ref<string | null> = ref(null)
 const password = ref("")
@@ -16,6 +45,8 @@ const show = ref(false)
 const toggleShowPassword = () => {
   show.value = !show.value
 }
+
+
 </script>
 
 <template>
@@ -59,7 +90,7 @@ const toggleShowPassword = () => {
             <Icon size="20" name="mdi:google" class="text-white" />
           </button>
 
-          <button class="group bg-gray-600/10 hover:bg-gray-700 p-2 rounded-lg w-10 h-10 duration-300">
+          <button @click.prevent="login" class="group bg-gray-600/10 hover:bg-gray-700 p-2 rounded-lg w-10 h-10 duration-300">
             <Icon size="20" name="mdi:github" class="text-white" />
           </button>
         </div>

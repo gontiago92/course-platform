@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 
-const { chapters, title } = useCourse()
-const route = useRoute()
+const course = await useCourse()
+const firstLesson = await useFirstLesson()
 
 const resetError = async (error: { value: null; }) => {
-  await navigateTo('/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3')
+  await navigateTo(firstLesson.path)
   error.value = null
 }
 </script>
@@ -12,14 +12,14 @@ const resetError = async (error: { value: null; }) => {
 <template>
 
   <div>
-
-    <div class="mb-4 flex justify-center items-center w-full"> <!-- should have justify between instead if center -->
+    fewfwefwe
+    <div class="mb-4 flex justify-between items-center w-full"> <!-- should have justify between instead if center -->
       <h1 class="text-3xl">
         <span class="font-medium">
-          Course:
-          <span class="font-bold">{{ title }}</span>
+          <span class="font-bold">{{ course.title }}</span>
         </span>
       </h1>
+      <UserCard />
     </div>
 
     <div class="flex flex-row justify-center flex-grow">
@@ -27,9 +27,10 @@ const resetError = async (error: { value: null; }) => {
           class="prose mr-4 p-8 bg-white rounded-md min-w-[20ch] max-w-[40ch] flex flex-col"
       >
         <h3 class="text-xl font-bold mb-10">Chapters</h3>
+
         <div
             class="space-y-1 mb-4 flex flex-col"
-            v-for="chapter in chapters"
+            v-for="chapter in course.chapters"
             :key="chapter.slug"
         >
           <h4 class="font-bold">{{ chapter.title }}</h4>
@@ -39,8 +40,6 @@ const resetError = async (error: { value: null; }) => {
               class="flex flex-row space-x-1 no-underline prose-sm font-normal py-1 px-4 -mx-4"
               :to="lesson.path"
               :class="{
-              'text-emerald-500 font-semibold':
-                lesson.path === $route.fullPath,
               'text-gray-600':
                 lesson.path !== $route.fullPath,
             }"
@@ -78,4 +77,8 @@ const resetError = async (error: { value: null; }) => {
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.router-link-active {
+  @apply text-emerald-500;
+}
+</style>

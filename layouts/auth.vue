@@ -6,7 +6,7 @@ const { theme } = useAppConfig()
 
 <template>
   <div :class="theme.dark ? 'dark' : ''">
-    <div class="bg-red-500 dark:bg-primary dark:text-content-light w-screen h-screen">
+    <div class="bg-gray-100 dark:bg-primary dark:text-content-light w-screen h-screen">
       <slot />
     </div>
   </div>

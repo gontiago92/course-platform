@@ -1,15 +1,17 @@
 <script setup lang="ts">
 
-const course = useCourse()
+const course = await useCourse()
 const route = useRoute()
+const { chapterSlug, lessonSlug } = route.params
+const lesson = await useLesson(chapterSlug, lessonSlug)
 
 definePageMeta({
   middleware: [
-    ({ params }, from) => {
-      const course = useCourse()
+    async ({ params }, from) => {
+      const course = await useCourse()
 
       const chapter = computed(() => {
-        return course.chapters.find(chapter => chapter.slug === params.chapterSlug)
+        return course.value.chapters.find(chapter => chapter.slug === params.chapterSlug)
       })
 
       if(!chapter.value) {
@@ -36,14 +38,10 @@ definePageMeta({
 })
 
 const chapter = computed(() => {
-  return course.chapters.find(chapter => chapter.slug === route.params.chapterSlug)
+  return course.value.chapters.find(chapter => chapter.slug === route.params.chapterSlug)
 })
 
-const lesson = computed(() => {
-  return chapter.value?.lessons.find(lesson => lesson.slug === route.params.lessonSlug)
-})
-
-const title = computed(() => `${lesson.value?.title} - ${course.title}`)
+const title = computed(() => `${lesson.value?.title} - ${course.value.title}`)
 
 useHead({
   title: title
